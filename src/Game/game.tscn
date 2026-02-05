@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://q32bp8f8ey3" path="res://src/Map/map.gd" id="3_bob6j"]
 [ext_resource type="Script" uid="uid://b6lxy5x2lr0xp" path="res://src/Game/event_handler.gd" id="3_sag4g"]
 [ext_resource type="Script" uid="uid://bw0qf5ph5x2k" path="res://src/Map/dungeon_generator.gd" id="4_bob6j"]
+[ext_resource type="Script" uid="uid://bcwvypnibxdt1" path="res://src/Map/field_of_view.gd" id="5_3s8ir"]
 
 [node name="Game" type="Node2D" unique_id=403112503]
 script = ExtResource("1_60cvd")
@@ -16,6 +17,9 @@ script = ExtResource("3_bob6j")
 
 [node name="DungeonGenerator" type="Node" parent="Map" unique_id=840006211]
 script = ExtResource("4_bob6j")
+
+[node name="FieldOfView" type="Node" parent="Map" unique_id=33711287]
+script = ExtResource("5_3s8ir")
 
 [node name="Entities" type="Node2D" parent="." unique_id=1227053990]
 
