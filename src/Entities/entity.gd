@@ -18,6 +18,7 @@ var grid_position: Vector2i:
 		position = Grid.grid_to_world(grid_position)
 var fighter_component: FighterComponent
 var ai_component: BaseAIComponent
+var consumable_component : ConsumableComponent
 
 func _init(map_data: MapData, start_position: Vector2i, entity_definition: EntityDefinition) -> void:
 	centered = false
@@ -46,6 +47,11 @@ func set_entity_type(entity_definition: EntityDefinition) -> void:
 	if entity_definition.fighter_definition:
 		fighter_component = FighterComponent.new(entity_definition.fighter_definition)
 		add_child(fighter_component)
+		
+	if entity_definition.consumable_definition:
+		if entity_definition.consumable_definition is HealingConsumableComponentDefinition:
+			consumable_component = HealingConsumableComponent.new(entity_definition.consumable_definition)
+			add_child(consumable_component)
 
 func is_blocking_movement() -> bool:
 	return blocks_movement
