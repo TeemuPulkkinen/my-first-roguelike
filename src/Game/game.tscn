@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://cstwokrjttl0g" path="res://src/GUI/mouseover_checker.gd" id="9_4te78"]
 [ext_resource type="Script" uid="uid://ckk42fmh6654i" path="res://src/GUI/hp_display.gd" id="9_mkl7w"]
 [ext_resource type="Script" uid="uid://drnch13r7hs31" path="res://src/GUI/message_log.gd" id="11_drysr"]
+[ext_resource type="PackedScene" uid="uid://bridt2w0ebp0s" path="res://src/GUI/Reticle/reticle.tscn" id="11_muykf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0qd4d"]
 atlas = ExtResource("8_lx5th")
@@ -76,8 +77,9 @@ script = ExtResource("1_60cvd")
 [node name="InputHandler" type="Node" parent="VBoxContainer/SubViewportContainer/SubViewport/Game" unique_id=2029108618]
 script = ExtResource("2_le6wr")
 
-[node name="MainGameInputHandler" type="Node" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/InputHandler" unique_id=755126197]
+[node name="MainGameInputHandler" type="Node" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/InputHandler" unique_id=755126197 node_paths=PackedStringArray("reticle")]
 script = ExtResource("3_lx5th")
+reticle = NodePath("../../Map/Reticle")
 
 [node name="GameOverInputHandler" type="Node" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/InputHandler" unique_id=729810917]
 script = ExtResource("4_0qd4d")
@@ -105,6 +107,8 @@ script = ExtResource("5_3s8ir")
 
 [node name="MouseoverChecker" type="Node2D" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Map" unique_id=1424338098]
 script = ExtResource("9_4te78")
+
+[node name="Reticle" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Map" unique_id=1975269037 instance=ExtResource("11_muykf")]
 
 [node name="Camera2D" type="Camera2D" parent="VBoxContainer/SubViewportContainer/SubViewport/Game" unique_id=1191377549]
 zoom = Vector2(2, 2)
