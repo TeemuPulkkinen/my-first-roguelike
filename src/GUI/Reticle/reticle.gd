@@ -57,7 +57,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		position_selected.emit(grid_position)
 	if Input.is_action_just_pressed("ui_back"):
-		position_selected.emit(-1, -1)
+		position_selected.emit(Vector2i(-1, -1))
 
 func _setup_border(radius: int) -> void:
 	if radius <= 0:
