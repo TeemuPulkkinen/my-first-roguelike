@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3w0rd8gdl7lo" path="res://src/Entities/Actors/Components/ComponentDefinitions/fireball_damage_consumable_component_definition.gd" id="1_62n8f"]
 [ext_resource type="Script" uid="uid://ben6gn0j8x00s" path="res://src/Entities/entity_definition.gd" id="1_s1ujj"]
-[ext_resource type="Texture2D" uid="uid://04buqru8gp15" path="res://src/Images/monochrome_packed.png" id="2_bwboe"]
+[ext_resource type="Texture2D" uid="uid://04buqru8gp15" path="res://assets/images/monochrome_packed.png" id="2_bwboe"]
 
 [sub_resource type="Resource" id="Resource_eaite"]
 script = ExtResource("1_62n8f")
