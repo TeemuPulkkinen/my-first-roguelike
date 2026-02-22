@@ -12,6 +12,8 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(1, 1, 1, 1)
 
+[sub_resource type="Shortcut" id="Shortcut_0acon"]
+
 [node name="InventoryMenuButton" type="Button" unique_id=946447724]
 offset_right = 8.0
 offset_bottom = 8.0
@@ -30,5 +32,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_vuyxv")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_p5mgn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_vuyxv")
 action_mode = 0
+shortcut = SubResource("Shortcut_0acon")
 shortcut_feedback = false
 alignment = 0

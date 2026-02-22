@@ -32,6 +32,7 @@ var fighter_component: FighterComponent
 var ai_component: BaseAIComponent
 var consumable_component : ConsumableComponent
 var inventory_component: InventoryComponent
+var level_component: LevelComponent
 
 func _init(map_data: MapData, start_position: Vector2i, key: String = "") -> void:
 	centered = false
@@ -54,6 +55,9 @@ func set_entity_type(key: String) -> void:
 	entity_name = _definition.name
 	texture = entity_definition.texture
 	modulate = entity_definition.color
+	if entity_definition.level_info:
+		level_component = LevelComponent.new(entity_definition.level_info)
+		add_child(level_component)
 	
 	match entity_definition.ai_type:
 		AIType.HOSTILE:
@@ -110,6 +114,8 @@ func get_save_data() -> Dictionary:
 		save_data["ai_component"] = ai_component.get_save_data()
 	if inventory_component:
 		save_data["inventory_component"] = inventory_component.get_save_data()
+	if level_component:
+		save_data["level_component"] = level_component.get_save_data()
 	return save_data
 
 func restore(save_data: Dictionary) -> void:
@@ -124,3 +130,5 @@ func restore(save_data: Dictionary) -> void:
 			add_child(confused_enemy_ai)
 	if inventory_component and save_data.has("inventory_component"):
 		inventory_component.restore(save_data["inventory_component"])
+	if level_component and save_data.has("level_component"):
+		level_component.restore(save_data["level_component"])
