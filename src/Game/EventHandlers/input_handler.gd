@@ -1,6 +1,7 @@
 class_name InputHandler
 extends Node
 
+# DUMMY = modal state used when inventory/reticle/UI is active.
 enum InputHandlers {MAIN_GAME, GAME_OVER, HISTORY_VIEWER, DUMMY}
 
 @export var start_input_handler: InputHandlers

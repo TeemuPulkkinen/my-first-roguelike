@@ -62,9 +62,11 @@ func get_item(window_title: String, inventory: InventoryComponent, evaluate_for_
 	var selected_item: Entity = await inventory_menu.item_selected
 	var has_item: bool = selected_item != null
 	var needs_targeting: bool = has_item and selected_item.consumable_component and selected_item.consumable_component.get_targeting_radius() != -1
-	if not evaluate_for_next_step or (selected_item and selected_item.consumable_component and selected_item.consumable_component.get_targeting_radius() == -1):
+
+	if not evaluate_for_next_step or not needs_targeting:
 		await get_tree().physics_frame
 		get_parent().call_deferred("transition_to", InputHandler.InputHandlers.MAIN_GAME)
+
 	return selected_item
 
 func get_grid_position(player: Entity, radius: int) -> Vector2i:
